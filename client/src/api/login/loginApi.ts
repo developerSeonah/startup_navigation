@@ -42,9 +42,8 @@ export const login = async (params: MemeberLoginParams) => {
                 // 로컬 스토리지 세팅
                 window.localStorage.setItem('gwtoken', res.data.result.gwtoken);
                 window.localStorage.setItem('token', res.data.result.token);
-                window.localStorage.setItem('member_idx', res.data.result.idx);
-                window.localStorage.setItem('user_id', res.data.result.user_id);
-                window.localStorage.setItem('email', res.data.result.email);
+                window.localStorage.setItem('user_id', res.data.result.idx);
+              
                 result = {
                     result: true,
                     msg: '로그인 성공',

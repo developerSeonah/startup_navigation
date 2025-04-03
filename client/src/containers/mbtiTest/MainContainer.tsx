@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { getMbtiTestQuestion, postMbtiTestResponse } from '@/api/mbtiTest/mbtiTestApi';
 import styles from './MainContainer.module.css';
-
+import { useRouter } from 'next/navigation';
 interface Question {
     question_id: number;
     question_text: string;
@@ -12,6 +12,7 @@ interface Question {
 }
 
 const MainContainer = () => {
+    const router = useRouter();
     const [questions, setQuestions] = useState<Question[]>([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState<{ [key: number]: number }>({});
@@ -67,13 +68,16 @@ const MainContainer = () => {
         const questionIds = Object.keys(answers).map(Number);
         const scores = Object.values(answers);
         const params = {
-            user_id: Number(localStorage.getItem('user_id')),
+            user_id: localStorage.getItem('user_id') || '',
             question_id: questionIds,
             score: scores
         }
         try {
             const response = await postMbtiTestResponse(params);
             console.log('API Response:', response);
+            if(response.message === "응답이 성공적으로 저장되었습니다."){
+                router.push('/mbti');
+            }
         } catch (err) {
             console.error('Error posting answers:', err);
         }

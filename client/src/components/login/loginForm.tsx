@@ -116,7 +116,7 @@ const LoginForm = () => {
             </p>
           )}
           <div className="flex justify-center mt-4">
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
+            <button onClick={handleLogin} type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
               로그인
             </button>
           </div>

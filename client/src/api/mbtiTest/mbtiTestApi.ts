@@ -1,7 +1,7 @@
 import instance from "../axiosInstances/defaultInstance";
 
 interface postMbtiTestResponseProps {
-    user_id: number;
+    user_id: string;
     question_id: number[];
     score: number[];
 }

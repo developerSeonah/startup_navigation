@@ -22,21 +22,9 @@ router.post('/', (req, res) => {
         return res.status(400).json({ error: '필수 필드가 누락되었습니다.' });
     }
 
-    // 배열 길이 검증
-    if (question_id.length !== score.length) {
-        return res.status(400).json({ error: '질문 ID와 점수의 개수가 일치하지 않습니다.' });
-    }
-
-    // 점수 범위 검증 (예: 1-5점)
-    for (const s of score) {
-        if (s < 1 || s > 5) {
-            return res.status(400).json({ error: '점수는 1에서 5 사이여야 합니다.' });
-        }
-    }
-
     const values = question_id.map((qid, index) => [user_id, qid, score[index]]);
     const query = `
-        INSERT INTO mbti_responses (user_id, question_id, score, created_at)
+        INSERT INTO mbti_responses (user_id, question_id, score)
         VALUES ?
     `;
 

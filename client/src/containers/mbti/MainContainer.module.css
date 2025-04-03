@@ -1,0 +1,122 @@
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mbtiType {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
+}
+
+.mbtiName {
+    font-size: 1.5rem;
+    color: #4b5563;
+}
+
+.dimensionScores {
+    margin-bottom: 2rem;
+}
+
+.dimensionScores h3 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.scoreGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.scoreItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dimension {
+    font-weight: bold;
+    min-width: 1.5rem;
+    color: #4b5563;
+}
+
+.scoreBar {
+    flex: 1;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.scoreFill {
+    height: 100%;
+    background-color: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.scoreValue {
+    min-width: 2rem;
+    text-align: right;
+    color: #4b5563;
+}
+
+.description {
+    margin-bottom: 2rem;
+}
+
+.description h3 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.description p {
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+.footer {
+    text-align: right;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #4b5563;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.backButton {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.homeButton {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 1rem;
+}       

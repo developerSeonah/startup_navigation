@@ -22,7 +22,10 @@ app.use(cors());
 app.use(express.json()); // Add JSON body parser middleware
 
 const mbtiQuestionRouter = require('./api/mbti_questions/index');
+const mbtiResultRouter = require('./api/mbti_result/index');
+
 app.use('/api/mbti_questions', mbtiQuestionRouter);
+app.use('/api/mbti_result', mbtiResultRouter);
 
 // 3) Express 라우트 예시
 app.get('/', (req, res) => {
